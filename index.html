@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahmi Custom Motor Rent</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style untuk body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Style untuk header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style untuk container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style untuk sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            padding-top: 20px;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Style untuk tombol buka sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        /* Style untuk tombol close sidebar */
+        .closebtn {
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        /* Style untuk carousel */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Style untuk carousel-navigation */
+        .carousel-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .carousel-navigation button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-navigation button:hover {
+            background-color: #555;
+        }
+
+        /* Style untuk footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="#" class="dashboard">Dashboard</a>
+        <a href="#">Profil</a>
+        <a href="categories.html">Kategori</a> 
+        <a href="transaction-history.html">Riwayat Transaksi</a>
+        <a href="#">Logout</a>
+        <a href="login.html" class="login-btn">Login</a> 
+    </div>
+
+    <button class="openbtn" id="openbtn">☰</button>
+
+    <header>
+        <img src="image/logo.jpeg" alt="Logo Rental Motor Custom" style="width: 300px;">
+        <p>Temukan motor custom impian kalian disini</p> 
+        <p>Ayo pilih motor kesukaanmu. Nyewa tapi yaa mwehe</p>
+    </header>
+    
+    <div class="container">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="image/120cc.jpeg" alt="Motor 120 cc">
+                    <h4>120 cc</h4>
+                    <p>Mulai dari Rp. 70.000/hari</p>
+                    <p>Tahun: 2014</p>
+                    <p>Basic Yamaha Scorpio</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/150cc.jpeg" alt="Motor 150 cc">
+                    <h4>150 cc</h4>
+                    <p>Mulai dari Rp. 90.000/hari</p>
+                    <p>Tahun: 2016</p>
+                    <p>Basic Yamaha Vixion</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/200cc.jpeg" alt="Motor 200 cc">
+                    <h4>200 cc</h4>
+                    <p>Mulai dari Rp. 120.000/hari</p>
+                    <p>Tahun: 2012</p>
+                    <p>Basic Yamaha Byson</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-navigation">
+            <button class="prev-btn">Previous</button>
+            <button class="next-btn">Next</button>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const openBtn = document.getElementById("openbtn");
+            const closeBtn = document.createElement("button");
+            closeBtn.innerHTML = "&times;"; // Tanda silang untuk tombol close
+            closeBtn.className = "closebtn";
+            const sidebar = document.getElementById("sidebar");
+
+            // Fungsi untuk membuka sidebar
+            function openSidebar() {
+                sidebar.style.left = "0";
+            }
+
+            // Fungsi untuk menutup sidebar
+            function closeSidebar() {
+                sidebar.style.left = "-250px";
+            }
+
+            // Menambahkan event listener untuk tombol buka sidebar
+            openBtn.addEventListener("click", openSidebar);
+
+            // Menambahkan event listener untuk tombol close sidebar
+            closeBtn.addEventListener("click", closeSidebar);
+
+            // Menambahkan tombol close ke dalam body
+            document.body.appendChild(closeBtn);
+
+            // Kode untuk carousel
+            const carousel = document.querySelector('.carousel');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+            const totalItems = carouselItems.length;
+            const itemWidth = carouselItems[0].offsetWidth;
+
+            // Set lebar total carousel sesuai dengan jumlah item
+            carousel.style.width = `${totalItems * itemWidth}px`;
+
+            // Fungsi untuk memindahkan carousel
+            function moveCarousel() {
+                const newPosition = -1 * currentIndex * itemWidth;
+                carousel.style.transform = `translateX(${newPosition}px)`;
+            }
+
+            // Fungsi untuk menampilkan item selanjutnya
+            function nextItem() {
+                if (currentIndex < totalItems - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                moveCarousel();
+            }
+
+            // Fungsi untuk menampilkan item sebelumnya
+            function prevItem() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = totalItems - 1;
+                }
+                moveCarousel();
+            }
+
+            // Menambahkan event listener untuk tombol "Previous" dan "Next"
+            document.querySelector('.prev-btn').addEventListener('click', prevItem);
+            document.querySelector('.next-btn').addEventListener('click', nextItem);
+        });
+    </script>
+</body>
+</html>
