@@ -5,95 +5,242 @@
     box-sizing: border-box;
 }
 
-/* Style untuk body */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: "Poppins", sans-serif;
+    background-color: #e0f7fa; /* Warna latar belakang baru */
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Style untuk header */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Style untuk container */
+/* Container */
 .container {
-    max-width: 960px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Style untuk sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background-color: #333;
-    padding-top: 20px;
-    transition: all 0.3s ease;
-    z-index: 1;
-}
-
-.sidebar a {
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    display: block;
-}
-
-.sidebar a:hover {
-    background-color: #555;
-}
-
-/* Style untuk tombol buka sidebar */
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    border: none;
-    background: none;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-}
-
-/* Style untuk carousel */
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    margin-top: 20px;
-}
-
-.carousel {
+/* Navigation */
+nav {
     display: flex;
-    transition: transform 0.5s ease;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #006064; /* Warna latar belakang baru */
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ff8a65; /* Warna hover baru */
+}
+nav .menu-btn i {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+input[type="checkbox"] {
+    display: none;
 }
 
-.carousel-item {
-    min-width: 100%;
-    padding: 0 10px;
-    text-align: center;
+/* Login Button */
+.btn_login {
+    background-color: #ff8a65; /* Warna latar belakang baru */
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+.btn_login:hover {
+    background-color: #ff7043; /* Warna hover baru */
 }
 
-.carousel-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+/* Jumbotron */
+.jumbotron {
+    display: flex;
+    background-color: #006064; /* Warna latar belakang baru */
+    border-radius: 20px;
+    padding: 40px 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    color: #fff;
+}
+.jumbotron-text {
+    max-width: 50%;
+}
+.jumbotron-text p {
+    margin: 20px 0;
+}
+.jumbotron-text button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff8a65; /* Warna latar belakang baru */
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Style untuk footer */
+/* Card Categories */
+.cards-categories {
+    display: flex;
+    flex-direction: column;
+}
+.cards-categories h2 {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 20px;
+}
+.card-categories {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    flex: 1 1 30%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card h5 {
+    margin: 10px 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006064; /* Warna latar belakang baru */
     color: #fff;
     padding: 20px;
+    margin-top: 40px;
     text-align: center;
-    margin-top: 20px;
+}
+
+/* Login Page */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.link-register {
+    text-decoration: none;
+    margin-top: 10px;
+    color: #ff8a65; /* Warna teks baru */
+}
+.link-register:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1023px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Navbar Responsive */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    nav .menu-btn i {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: rgba(0, 0, 0, 0.85);
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    nav ul li a {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        color: #fff;
+    }
+    input[type="checkbox"]:checked ~ ul {
+        display: flex;
+    }
+
+    /* Jumbotron Responsive */
+    .jumbotron {
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .jumbotron-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Card Categories Responsive */
+    .card-categories {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .card {
+        width: 100%;
+    }
+
+    /* Form Login Responsive */
+    .form-login {
+        width: 90%;
+        padding: 20px;
+    }
 }
